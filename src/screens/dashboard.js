@@ -7,6 +7,7 @@ import FileUploadOutlinedIcon from '@mui/icons-material/FileUploadOutlined';
 import { NavBar } from '../components/navBar'
 import { InputFields } from '../components/input';
 import { Buttons } from '../components/button';
+import { CheckBox } from '../components/checkBox';
 
 export const Dashboard = () => {
 
@@ -21,6 +22,7 @@ export const Dashboard = () => {
     useEffect (() =>{
         console.log(foodPref)
     })
+
 
 
 
@@ -108,7 +110,7 @@ export const Dashboard = () => {
                 <Buttons 
                     onPress = {addItem}
                     label = "Add Item"
-                    addStyle = " w-[130px] h-[40px] "
+                    addStyle = " w-[130px] h-[40px] bg-[#1EDF38] "
                 />
             </View>
 
@@ -117,7 +119,7 @@ export const Dashboard = () => {
         <Buttons 
             onPress={generateRecipes}
             label="Generate Recipes"
-            addStyle= " w-[90%] h-[50px] mt-5 "
+            addStyle= " w-[90%] h-[50px] mt-5 bg-[#1EDF38] "
         />
 
 
@@ -125,15 +127,48 @@ export const Dashboard = () => {
 
 
         {/* Selecting food preferences */}
-        <View className={ foodPref ? " w-screen h-screen absolute justify-center items-center bg-[#ffffff34]" : "hidden"}>
-            <View className=" w-[80%] min-h-[50%] rounded-md p-5 bg-[#ac3b3b] shadow-xl">
-                <Buttons 
-                    onPress={()=>{setFoodPref(false)}}
-                    label="Cancel"
-                    addStyle= " w-[130] h-[50px] mt-5 "
-                />
+        <View className={ foodPref ? " w-screen h-screen absolute justify-center items-center bg-[#00000099]" : "hidden"}>
+
+
+            <View className=" w-[80%] min-h-[50%] rounded-md p-5 bg-[#ffffff] shadow-xl ">
+
+
+                <Text className=" text-[25px] text-center text-[#1EDF38] mb-1">Dish Preferences</Text>
+
+
+                    <CheckBox label="Vegetarian" />
+                    <CheckBox label="Vegan" />
+                    <CheckBox label="Omnivorous" />
+                    <CheckBox label="Gluten-free" />
+                    <CheckBox label="Dairy-free" />
+                    <CheckBox label="Nut-free" />
+                    <CheckBox label="Low-carb" />
+                    <CheckBox label="Low-fat" />
+                    <CheckBox label="Organic" />
+
+
+
+                <View className="w-full h-[60px] flex flex-row justify-between items-center mt-5 ">
+                    <Buttons 
+                        onPress={()=>{setFoodPref(false)}}
+                        label="Cancel"
+                        addStyle= " w-[130] h-[40px] bg-[#b13030] "
+                    />
+                    <Buttons 
+                        onPress={()=>{setFoodPref(false)}}
+                        label="Generate"
+                        addStyle= " w-[130] h-[40px] bg-[#1EDF38] "
+                    />
+                </View>   
             </View>
         </View>
+
+
+
+
+
+
+
 
     </View>
   )
