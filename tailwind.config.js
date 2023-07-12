@@ -7,3 +7,5 @@ module.exports = {
   plugins: [],
 }
 
+// https://geekyants.com/blog/using-tailwind-css-in-react-native/
+
