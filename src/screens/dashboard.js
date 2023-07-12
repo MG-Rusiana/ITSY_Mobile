@@ -1,5 +1,5 @@
-import React from 'react';
-import { View, Text, StatusBar, Image, TouchableOpacity } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { View, Text, StatusBar, Image, TouchableOpacity  } from 'react-native';
 
 import AddIcon from '@mui/icons-material/Add';
 import FileUploadOutlinedIcon from '@mui/icons-material/FileUploadOutlined';
@@ -11,17 +11,32 @@ import { Buttons } from '../components/button';
 export const Dashboard = () => {
 
 
+   const [foodPref, setFoodPref] = useState(false)
+
     const selectPreferences = () => {
         console.log("Select Preference button clicked!")
+        setFoodPref(true)
     }
+
+    useEffect (() =>{
+        console.log(foodPref)
+    })
+
+
+
 
     const uploadImage = () => {
         console.log("Upload Images button clicked!")
     }
 
+    
+
+
     const addItem = () => {
         console.log("Add Item button clicked!")
     }
+
+
 
     const generateRecipes = () => {
         console.log("Generate Recipes button clicked!")
@@ -104,6 +119,21 @@ export const Dashboard = () => {
             label="Generate Recipes"
             addStyle= " w-[90%] h-[50px] mt-5 "
         />
+
+
+
+
+
+        {/* Selecting food preferences */}
+        <View className={ foodPref ? " w-screen h-screen absolute justify-center items-center bg-[#ffffff34]" : "hidden"}>
+            <View className=" w-[80%] min-h-[50%] rounded-md p-5 bg-[#ac3b3b] shadow-xl">
+                <Buttons 
+                    onPress={()=>{setFoodPref(false)}}
+                    label="Cancel"
+                    addStyle= " w-[130] h-[50px] mt-5 "
+                />
+            </View>
+        </View>
 
     </View>
   )
