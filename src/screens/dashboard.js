@@ -9,7 +9,7 @@ import { InputFields } from '../components/input';
 import { Buttons } from '../components/button';
 import { CheckBox } from '../components/checkBox';
 
-export const Dashboard = () => {
+export const Dashboard = ({navigation}) => {
 
 
    const [foodPref, setFoodPref] = useState(false)
@@ -42,6 +42,7 @@ export const Dashboard = () => {
 
     const generateRecipes = () => {
         console.log("Generate Recipes button clicked!")
+        navigation.navigate('Generated')
     }
 
     return (
@@ -51,7 +52,7 @@ export const Dashboard = () => {
 
 
         {/* StatusBar */}
-        <StatusBar backgroundColor="#d8d8d8" barStyle="dark-content" />
+        <StatusBar backgroundColor="#000000" barStyle="light-content" />
 
 
         {/* NavBar */}
