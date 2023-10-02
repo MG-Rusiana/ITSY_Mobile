@@ -1,4 +1,4 @@
 # ITSY_Mobile
 
 When pushing use
-git push **origin2** branch instead
+git push #**origin2** branch instead
