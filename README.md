@@ -1,5 +1,4 @@
 # ITSY_Mobile
 
-When pushing use git push
-#  _origin2_ 
-branch instead
+// Push
+# git push origin2 branchName
